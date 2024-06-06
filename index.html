@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Degree View</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aframe@1.6.0/dist/aframe-master.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <img id = "panorama" src="360_Deslizamiento_SanAntonioPrado_13072022.JPG" alt="">
+        <a-sky src="#panorama" rotation="0 10 0"></a-sky>
+        
+            <a-assets>
+                <video id="videoWindow" src="video1.mp4"></video>
+            </a-assets>
+        
+           
+              <a-video src="#videoWindow" position="0 1.6 -3"></a-video>
+        
+
+          <a-camera position="0 1.6 0"></a-camera>
+          
+          <div style="position: absolute; top: 10px; left: 10px; z-index: 1;">
+            <button id="playButton">Reproducir</button>
+            <button id="pauseButton">Pausar</button>
+          </div>
+
+    </a-scene>
+    <script src="script.js"></script>
+</body>
+</html>
