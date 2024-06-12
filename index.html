@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>360&deg; Image Gallery</title>
-    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+    <title>360° Image Gallery</title>
+    <meta name="description" content="360° Image Gallery - A-Frame">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
@@ -30,10 +30,13 @@
         <img id="cubes-thumb" crossorigin="anonymous" src="https://th.bing.com/th/id/R.a49d70fc6c9a69850558fd7b33cdaba0?rik=oawMyN0HxwUJ5g&riu=http%3a%2f%2fsiata.gov.co%2fsitio_web%2fapplication%2fassets%2fimg%2fcontenido%2fTutoriales%2ficono_goespacial.png&ehk=86m3s6TXQheaq6wm9D0z5Qn9bTVzajMshVGsouFS4wg%3d&risl=&pid=ImgRaw&r=0">
         <img id="sechelt-thumb" crossorigin="anonymous" src="https://th.bing.com/th/id/OIP.cbiyEMdAKe-ehQBiTKOS1AAAAA?pid=ImgDet&w=368&h=318&rs=1">
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <audio id="ambient-sound" crossorigin="anonymous" src="soundmountain.mp3" autoplay loop></audio> <!-- URL del sonido ambiental -->
         <img id="cubes" crossorigin="anonymous" src="poblado2.jpg">
         <img id="sechelt" crossorigin="anonymous" src="RioAburraBello.jpg">
-
       </a-assets>
+
+      <!-- Sonido ambiental -->
+      <a-entity sound="src: #ambient-sound; autoplay: true; loop: true"></a-entity>
 
       <!-- 360-degree image. -->
       <a-sky id="image-360" radius="10" src="#city"
@@ -57,6 +60,9 @@
           event-set__mouseleave="_event: mouseleave; color: black"
           raycaster="objects: .link"></a-cursor>
       </a-entity>
+
+      <!-- Oculus Go Controller -->
+      <a-entity oculus-go-controls></a-entity>
     </a-scene>
   </body>
 </html>
